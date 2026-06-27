@@ -1,0 +1,70 @@
+.page {
+  min-height: 100vh;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+}
+
+.hero {
+  margin-bottom: 2rem;
+}
+
+.eyebrow {
+  margin: 0 0 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #5b6b7c;
+}
+
+.hero h1 {
+  margin: 0 0 0.5rem;
+  font-size: 2rem;
+}
+
+.lead {
+  margin: 0;
+  color: #5b6b7c;
+}
+
+.card {
+  padding: 1.5rem;
+  border: 1px solid #d8dee4;
+  border-radius: 12px;
+  background: #fff;
+}
+
+.card h2 {
+  margin: 0 0 1rem;
+  font-size: 1.125rem;
+}
+
+.status {
+  margin: 0;
+  color: #5b6b7c;
+}
+
+.status.error {
+  color: #b42318;
+}
+
+.meta {
+  margin: 0;
+}
+
+.meta div + div {
+  margin-top: 0.75rem;
+}
+
+.meta dt {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #5b6b7c;
+}
+
+.meta dd {
+  margin: 0.25rem 0 0;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+}
