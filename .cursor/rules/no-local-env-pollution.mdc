@@ -1,0 +1,39 @@
+---
+description: ローカル環境を汚さない。動作確認はユーザーにコマンド実行を依頼する
+alwaysApply: true
+---
+
+# ローカル環境の汚染を避ける
+
+エージェントは、ユーザーのローカルマシンに永続的な変更を入れない。
+
+## 実行してはいけないこと
+
+- `pip install` / `pip install -r requirements.txt`
+- `python -m venv` や仮想環境の作成
+- `npm install` / `pnpm install` / `yarn install`
+- `docker compose up` / `docker build` など Docker デーモンを使う操作
+- 動作確認のための上記に付随するサーバー起動（`uvicorn`, `npm run dev` 等）
+
+## 代わりに行うこと
+
+- コード・設定ファイルの作成・編集は行ってよい
+- 動作確認が必要なときは、**ユーザーに実行してもらうコマンドを提示**する
+- コマンドはコピペ可能な形で、目的（何を確認するか）を短く添える
+
+## 例
+
+```markdown
+動作確認をお願いします。
+
+\`\`\`bash
+colima start   # 未起動の場合
+docker compose up --build
+\`\`\`
+
+http://localhost:5173 で画面が表示されれば OK です。
+```
+
+## 例外
+
+- ユーザーが**明示的に**「実行して」「動作確認して」と依頼した場合のみ、上記コマンドを実行してよい

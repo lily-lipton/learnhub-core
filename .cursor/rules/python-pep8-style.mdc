@@ -1,0 +1,38 @@
+---
+description: Python は基本 PEP 8 に従い、関数シグネチャは余程長くなければ1行で書く
+alwaysApply: true
+---
+
+# Python スタイル（PEP 8）
+
+Python コードの整形・新規記述は **基本 PEP 8** に従う。
+
+- インデント、空行、import 順、命名などは PEP 8 を優先する
+- 既存ファイルの全面リフォーマットは行わず、編集箇所と新規記述を優先して適用する
+
+## 関数シグネチャ
+
+関数・メソッドのシグネチャは、**余程長くならない限り1行**で書く。
+
+- 可読性のため、不要な複数行分割はしない
+- 型注釈・引数が多く1行が著しく長くなる場合のみ、複数行に分割してよい
+- 複数行にする場合は、括弧で囲み引数を1行ずつ揃える（PEP 8 の推奨形式）
+
+## 例
+
+```python
+# OK（通常は1行）
+def run_format_skill_sheet_api(*, engineer_id: int, format_code: str, filename: str) -> JSONResponse:
+
+# OK（著しく長い場合のみ複数行）
+def accept_format_job(
+    *,
+    engineer_id: int,
+    format_code: str,
+    filename: str,
+    content_base64: str,
+    content_type: str,
+    retry: bool,
+    idempotency_key: str | None,
+) -> AcceptResult:
+```
