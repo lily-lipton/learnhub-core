@@ -55,7 +55,7 @@ flowchart TB
 | Path | Description |
 |---|---|
 | User → IAP → Cloud Run | All production traffic is authenticated via IAP (allowed Google accounts only) |
-| Cloudflare | Optional; custom domain uses Cloud Run domain mapping + Cloudflare proxy (Full strict) |
+| Cloudflare | Custom domain **`learnhub.lily-lipton.com`** via domain mapping + Cloudflare proxy (Full strict) |
 | TiDB | Cross-cloud (GCP ↔ AWS); no VPC connector required (public endpoint + TLS) |
 | GCS | Image blobs; same region as Cloud Run to minimize egress |
 
@@ -127,3 +127,5 @@ gcloud run deploy learnhub-core \
 ```
 
 Use `--no-iap` or `--allow-unauthenticated` only when you intentionally want to disable IAP (e.g. one-time Phase 1 smoke test). For normal production updates, always pass `--iap`. Configure IAP in the console before the first IAP deploy.
+
+Production URL (custom domain, after §7 domain mapping): **https://learnhub.lily-lipton.com/**
