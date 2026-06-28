@@ -33,7 +33,7 @@ The following belong elsewhere (Cursor rules, internal docs, or future decisions
 ```markdown
 <!-- ❌ BAD -->
 ローカル開発は Docker Compose を使う。ホストへの pip install は禁止。
-See [requirements](./docs/20260627_01_app_requirements.md).
+See [requirements](./docs/01_app_requirements.md).
 
 <!-- ✅ GOOD -->
 Local development uses **Docker Compose**.
