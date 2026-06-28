@@ -1,0 +1,25 @@
+# gcloud run deploy --source . のアップロード対象から除外
+# Cloud Run コンソール「ソース」タブに表示されるのはこの一覧に従う（.dockerignore とは別）
+
+.git
+.gitignore
+.dockerignore
+.gcloudignore
+.cursor/
+
+docs/
+README.md
+docker-compose.yml
+docker-compose.prod.yml
+
+.env
+.env.*
+
+**/__pycache__
+**/.pytest_cache
+**/.venv
+**/node_modules
+frontend/dist
+
+# backend/static/ も本番ビルドでは未使用
+backend/static/

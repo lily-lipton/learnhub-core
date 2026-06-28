@@ -1,12 +1,22 @@
 .git
 .gitignore
-.env
-.env.*
-!.env.example
+.gcloudignore
+.cursor/
 
 docs/
+README.md
+docker-compose.yml
+docker-compose.prod.yml
+
+.env
+.env.*
+
 **/__pycache__
 **/.pytest_cache
 **/.venv
 **/node_modules
 frontend/dist
+
+# ホスト上の backend/static/ は本番ビルドでは使わない
+# Cloud Run 用 Dockerfile は Stage 1 で frontend をビルドし、Stage 2 で /app/static に COPY する
+backend/static/
