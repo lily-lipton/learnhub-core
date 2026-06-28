@@ -1,0 +1,25 @@
+---
+description: frontend の React 作業時に react-best-practices スキルを参照する
+globs: frontend/**/*.{ts,tsx}
+alwaysApply: false
+---
+
+# React Frontend
+
+`frontend/` は **Vite + React（SPA）**。コンポーネント実装・リファクタ・パフォーマンス改善では、必要に応じて `.cursor/skills/react-best-practices/` を参照する。
+
+## スキルの使い方
+
+1. まず `SKILL.md` の Quick Reference で該当カテゴリを確認
+2. 詳細な例が必要なら `AGENTS.md` を読む（エージェントが `Read` で開く）
+
+## このプロジェクトで優先する観点
+
+- **ウォーターフォール回避**: 独立した fetch は `Promise.all`、不要な await を遅延
+- **バンドル**: barrel import を避け、重い UI は `React.lazy()` + `Suspense`
+- **再レンダー**: 派生 state・memo・`startTransition` で不要な更新を抑える
+- **データ取得**: 重複リクエストは SWR 等で dedup（バックエンド API 経由）
+
+## 対象外
+
+Next.js / RSC / `next/dynamic` / `React.cache()` / サーバーサイド専用パターンは適用しない。

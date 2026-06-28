@@ -1,0 +1,41 @@
+---
+description: README.md は英語で書き、記載範囲を README 用に限定する
+globs: README.md
+alwaysApply: false
+---
+
+# README  conventions
+
+`README.md` is the **public-facing entry point** for the repo. Keep it in **English** only.
+
+## Language
+
+- Write all headings, body text, and table content in English
+- Do not add Japanese sections or bilingual blocks
+
+## Do not include in README
+
+The following belong elsewhere (Cursor rules, internal docs, or future decisions)—not in README:
+
+- **Host install policy** … e.g. “do not run pip/npm on the host” (see `no-local-env-pollution.mdc`)
+- **Planned extensions / roadmap** … e.g. TiDB, GCS, IAP backlog items
+- **Links to `docs/`** … whether `docs/` is tracked in git is undecided; do not link or index doc files from README
+
+## Do include in README
+
+- Prerequisites and how to run locally / prod-like / deploy
+- Tech stack and directory layout (high level)
+- URLs, health check, and essential behavior notes
+- Inline command examples (copy-paste ready)
+
+## Example
+
+```markdown
+<!-- ❌ BAD -->
+ローカル開発は Docker Compose を使う。ホストへの pip install は禁止。
+See [requirements](./docs/01_app_requirements.md).
+
+<!-- ✅ GOOD -->
+Local development uses **Docker Compose**.
+To enable IAP, configure IAP in the console first, then use `--no-allow-unauthenticated --iap`.
+```

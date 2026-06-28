@@ -1,0 +1,33 @@
+*~
+\#*\#
+.\#*
+[._]*.sw[a-p]
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon[
+]
+._*
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache
+
+# Environments
+.env
+.venv/
+venv/
+
+# Node
+node_modules/
+frontend/dist/
+
+# Build artifacts
+*.egg-info/
+dist/
+build/
+backend/static/
